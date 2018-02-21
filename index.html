@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LucasWorld Interactive Map Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="lib/node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+<body>
+    <div>
+        <aside>
+            <div>
+                <input type="text" id="search" />
+            </div>
+            <div>
+                <input type="dropdown" id="timeDropdown">
+            </div>
+            <article>
+                <h1>Area Title</h1>
+                <a href="#"><h2>POI link</h2></a>
+                <a href="#"><h2>POI link</h2></a>
+                <a href="#"><h2>POI link</h2></a>
+                <a href="#"><h2>POI link</h2></a>
+                <a href="#"><h2>POI link</h2></a>
+            </article>
+            <footer>
+                <button id="backToPrevious">Back</button> <!-- Should send user back to previous page results -->
+                <button id="clearSearch">Clear Search</button> <!-- Should reset the aside screen to Events at Current Time -->
+            </footer>
+        </aside>
+        <main>
+            <header>
+                <img src="">
+                <form>
+                    <input type="checkbox" id="rides">Rides
+                    <input type="checkbox" id="restaurants">Food
+                    <input type="checkbox" id="bathrooms">Bathrooms
+                </form>
+            </header>
+            <div id="mapContainer">
+                <div class="areaContainers">
+                    <article id="area-1">
+                        <h1>Area 1</h1>
+                        <ul>
+                            <li>POI 1 Name</li>
+                            <li>POI 2 Name</li>
+                            <li>POI 3 Name</li>
+                            <li>POI 4 Name</li>
+                        </ul>
+                    </article>
+                    <article id="area-2">
+                        <h1>Area 2</h1>
+                        <ul>
+                            <li>POI 1 Name</li>
+                            <li>POI 2 Name</li>
+                            <li>POI 3 Name</li>
+                            <li>POI 4 Name</li>
+                        </ul>
+                    </article>
+                    <article id="area-3">
+                        <h1>Area 3</h1>
+                        <ul>
+                            <li>POI 1 Name</li>
+                            <li>POI 2 Name</li>
+                            <li>POI 3 Name</li>
+                            <li>POI 4 Name</li>
+                        </ul>
+                    </article>
+                    <article id="area-4">
+                        <h1>Area 4</h1>
+                        <ul>
+                            <li>POI 1 Name</li>
+                            <li>POI 2 Name</li>
+                            <li>POI 3 Name</li>
+                            <li>POI 4 Name</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="areaContainers">
+                    <article id="area-5">
+                        <h1>Area 5</h1>
+                        <ul>
+                            <li>POI 1 Name</li>
+                            <li>POI 2 Name</li>
+                            <li>POI 3 Name</li>
+                            <li>POI 4 Name</li>
+                        </ul>
+                    </article>
+                    <article id="area-6">
+                        <h1>Area 6</h1>
+                        <ul>
+                            <li>POI 1 Name</li>
+                            <li>POI 2 Name</li>
+                            <li>POI 3 Name</li>
+                            <li>POI 4 Name</li>
+                        </ul>
+                    </article>
+                    <article id="area-7">
+                        <h1>Area 7</h1>
+                        <ul>
+                            <li>POI 1 Name</li>
+                            <li>POI 2 Name</li>
+                            <li>POI 3 Name</li>
+                            <li>POI 4 Name</li>
+                        </ul>
+                    </article>
+                    <article id="area-8">
+                        <h1>Area 8</h1>
+                        <ul>
+                            <li>POI 1 Name</li>
+                            <li>POI 2 Name</li>
+                            <li>POI 3 Name</li>
+                            <li>POI 4 Name</li>
+                        </ul>
+                    </article>
+                </div>
+                <div id="keyContainer">
+                    <h1>Key</h1>
+                    <img src="#" id="icon_bathroom">
+                    <img src="#" id="icon_characters">
+                    <img src="#" id="icon_kiosks">
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="lib/node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="lib/node_modules/popper.js/dist/popper.min.js"></script>
+    <script src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="dist/app.js"></script>
+</body>
+</html>
