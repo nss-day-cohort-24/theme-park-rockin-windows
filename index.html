@@ -8,34 +8,44 @@
     <link rel="stylesheet" type="text/css" media="screen" href="lib/node_modules/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
-<body>
-    <div class="container row">
+<body class="container-fluid">
+    <div class="row">
         <aside class="col-4">
             <div class="row">
-                <input type="text" id="search" />
+                <div class="col">
+                    <input type="text" id="search" />
+                </div>
             </div>
             <div class="row">
-                <input type="dropdown" id="timeDropdown">
+                <div class="col">
+                    <input type="dropdown" id="timeDropdown">
+                </div>
             </div>
-            <article class="row" id=""outPut >
+            <article class="row" id="outPut">
+                <div class="col">
                     <h1>Area Title</h1>
                     <a href="#"><h2>POI link</h2></a>
                     <a href="#"><h2>POI link</h2></a>
                     <a href="#"><h2>POI link</h2></a>
                     <a href="#"><h2>POI link</h2></a>
                     <a href="#"><h2>POI link</h2></a>
+                </div>
             </article>
             <footer class="row">
-                <button id="backToPrevious">Back</button> <!-- Should send user back to previous page results -->
-                <button id="clearSearch">Clear Search</button> <!-- Should reset the aside screen to Events at Current Time -->
+                <div class="col">
+                    <button id="backToPrevious">Back</button> <!-- Should send user back to previous page results -->
+                </div>
+                <div class="col">
+                    <button id="clearSearch">Clear Search</button> <!-- Should reset the aside screen to Events at Current Time -->
+                </div>
             </footer>
         </aside>
         <main class="col-8">
             <header class="row">
-                <div class="col-2">
+                <div class="col-4">
                     <img id="logo" src="#">
                 </div>
-                <div class="col-6">
+                <div class="col-8">
                     <form id="sortByCategory">
                         <input type="checkbox" id="rides">Rides
                         <input type="checkbox" id="restaurants">Food
@@ -43,66 +53,69 @@
                     </form>
                 </div>
             </header>
-            <div class="row" id="mapContainer">
-                <div class="row areaContainers">
-                    <article class="col-2"id="area-1">
-                        <button>
-                            <h1>Area 1</h1>
-                        </button>
+            <div class="row areaContainers">
+                <article class="col-2"id="area-1">
+                    <button>
+                        <h1>Area 1</h1>
+                    </button>
 
-                    </article>
-                    <article class="col-2"id="area-2">
-                        <button>
-                            <h1>Area 2</h1>
-                        </button>
+                </article>
+                <article class="col-2"id="area-2">
+                    <button>
+                        <h1>Area 2</h1>
+                    </button>
 
-                    </article>
-                    <article class="col-2"id="area-3">
-                        <button>
-                            <h1>Area 3</h1>
-                        </button>
+                </article>
+                <article class="col-2"id="area-3">
+                    <button>
+                        <h1>Area 3</h1>
+                    </button>
 
-                    </article>
-                    <article class="col-2"id="area-4">
-                        <button>
-                            <h1>Area 4</h1>
-                        </button>
+                </article>
+                <article class="col-2"id="area-4">
+                    <button>
+                        <h1>Area 4</h1>
+                    </button>
 
-                    </article>
-                </div>
-                <div class="row areaContainers">
-                    <article class="col-2" id="area-5">
-                        <button>
-                            <h1>Area 5</h1>
-                        </button>
-
-                    </article>
-                    <article class="col-2" id="area-6">
-                        <button>
-                            <h1>Area 6</h1>
-                        </button>
-
-                    </article>
-                    <article class="col-2" id="area-7">
-                        <button>
-                            <h1>Area 7</h1>
-                        </button>
-
-                    </article>
-                    <article class="col-2" id="area-8">
-                        <button>
-                            <h1>Area 8</h1>
-                        </button>
-
-                    </article>
-                </div>
-                <div id="keyContainer">
-                    <h1>Key</h1>
-                    <img src="toilet-gender" id="icon_bathroom"><div>BATHROOMS</div>
-                    <img src="character_meet" id="icon_characters"><div>CHARACTER MEETS</div>
-                    <img src="images/map_kiosk" id="icon_kiosks"><div>KIOSK LOCATIONS</div>
+                </article>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <img id="map" src="images/LucasWorldMap.png">
                 </div>
             </div>
+            <div class="row areaContainers">
+                <article class="col-2" id="area-5">
+                    <button>
+                        <h1>Area 5</h1>
+                    </button>
+
+                </article>
+                <article class="col-2" id="area-6">
+                    <button>
+                        <h1>Area 6</h1>
+                    </button>
+
+                </article>
+                <article class="col-2" id="area-7">
+                    <button>
+                        <h1>Area 7</h1>
+                    </button>
+
+                </article>
+                <article class="col-2" id="area-8">
+                    <button>
+                        <h1>Area 8</h1>
+                    </button>
+
+                </article>
+            </div>
+            <div id="keyContainer">
+                <h1>Key</h1>
+                <img src="toilet-gender" id="icon_bathroom"><div>BATHROOMS</div>
+                <img src="character_meet" id="icon_characters"><div>CHARACTER MEETS</div>
+                <img src="images/map_kiosk" id="icon_kiosks"><div>KIOSK LOCATIONS</div>
+            </div>  
         </main>
     </div>
     <script src="lib/node_modules/jquery/dist/jquery.slim.min.js"></script>
