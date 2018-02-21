@@ -1,7 +1,32 @@
 body {
-    background: $tan;
+    background: linear-gradient($tan, $gold);
+    font-family: $bodyFont;
+    width: 1920px;
 }
 
 h1, h2, h3, h4, h5  {
+    color: $tan;
     font-family: $headingFont;
+}
+
+a {
+    text-decoration: none;
+    color: $gray;
+    &:hover {
+        text-decoration: none;
+        color: $gold;
+    }
+}
+
+button {
+    color: $tan;
+    background: $green;
+    &:hover {
+        color: $tan;
+        background: $gold;
+    }
+}
+
+img {
+    max-width: $maxWidth;
 }
