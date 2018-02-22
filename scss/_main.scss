@@ -9,17 +9,79 @@
 
 // checkboxes
 
-.boxes {
+/* Customize the label (the container) */
+
+#sortByCategory {
+    margin-top: 100px;
+}
+
+.container {
+    display: inline;
+    position: relative;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 2em;
+    color: $gold;
+    font-family: $headingFont;
+    letter-spacing: .2em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .checkbox {
+      margin-right: 5px;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-}
-
-.box_label {
-    color: $gold;
-    font-family: $headingFont;
-    display: inline;
-}
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border: 5px solid $gold;
+    margin-left: .15em;
+    margin-top: 10px;
+  }
+  
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: $gray;
+    border: none;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    top: 4px;
+    left: 10px;
+    width: 8px;
+    height: 16px;
+    border: solid $tan;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
 
 
 // body
@@ -30,11 +92,9 @@
 }
 
 main button {
-    padding-top: .5em;
-    padding-bottom: .25em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: .5em 1em;
     background-color: $gold;
+    width: 100%;
     box-shadow:     
     0 1px 2px #fff, /*bottom external highlight*/
     0 -1px 1px #666, /*top external shadow*/ 
@@ -47,9 +107,11 @@ main button {
 }
 
 .area {
-    font-size: 30px;
+    font-size: 27px;
     letter-spacing: .2em;
     white-space: nowrap;
+    margin: .2em;
+    font-family: $headingFont;
 }
 
 // Key
@@ -77,6 +139,7 @@ main button {
     color: $gold;
     font-size: 25px; 
     text-align: center;
+    white-space: nowrap;
 }
 
 .keyInfo {
