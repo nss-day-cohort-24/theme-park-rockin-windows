@@ -1,4 +1,25 @@
 div#grid{
     z-index: 1000;
     position: absolute;
+    min-height: 1235px;
+    display:flex;
+}
+
+#grid .row.grid {
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+#grid .col {
+    padding: 0;
+    flex-flow: column nowrap;
+    display: flex;
+}
+
+#grid .card {
+    flex-grow: 1; 
+    background: none;
+    &:hover {
+        background: rgba(35,35,35,.5)
+    }
 }
