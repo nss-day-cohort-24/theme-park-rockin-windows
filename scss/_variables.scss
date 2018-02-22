@@ -3,6 +3,7 @@
 $gold: rgb(167, 130, 50);
 $tan: rgb(250, 235, 214);
 $gray: rgb(73, 73, 73);
+$darkgray: rgb(53, 53, 53);
 $blue: rgb(53, 76, 83);
 $green: rgb(5, 87, 52);
 $red: rgb(137, 48, 30);
@@ -21,3 +22,8 @@ $pfont: 1em;
 //image max-width
 
 $maxWidth: 100%;
+
+//output area specific values
+
+$border: $gold 3px solid;
+$boxShadow: inset 0 0 30px black;

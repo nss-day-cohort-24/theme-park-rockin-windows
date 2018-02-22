@@ -11,17 +11,30 @@
 <body class="container-fluid">
     <div class="row">
         <aside class="col-4">
-            <div class="row">
+            <div class="row searchBar">
                 <div class="col">
-                    <input type="text" id="search" />
+                    <input type="text" id="search" placeholder="&#x1F50D; Search" />
                 </div>
             </div>
-            <div class="row">
+            <div class="row timeDropdown">
                 <div class="col">
-                    <input type="dropdown" id="timeDropdown">
+                    <select id="timeOptions">
+                        <option value="currentTime">Current Time</option>
+                        <option value="10">10 AM</option>
+                        <option value="11">11 AM</option>
+                        <option value="12">12 PM</option>
+                        <option value="13">1 PM</option>
+                        <option value="14">2 PM</option>
+                        <option value="15">3 PM</option>
+                        <option value="16">4 PM</option>
+                        <option value="17">5 PM</option>
+                        <option value="18">6 PM</option>
+                        <option value="19">7 PM</option>
+                        <option value="20">8 PM</option>
+                    </select>
                 </div>
             </div>
-            <article class="row" id="outPut">
+            <article class="row" id="output">
                 <div class="col">
                     <h1>Area Title</h1>
                     <a href="#"><h2>POI link</h2></a>
@@ -31,7 +44,7 @@
                     <a href="#"><h2>POI link</h2></a>
                 </div>
             </article>
-            <footer class="row">
+            <footer class="row searchButtons">
                 <div class="col">
                     <button id="backToPrevious">Back</button> <!-- Should send user back to previous page results -->
                 </div>

@@ -1,0 +1,53 @@
+aside {
+    display: flex;
+    flex-direction: column;
+    background: $gray;
+    outline: $gold solid 5px;
+    & .row {
+       min-height: 75px;
+       flex-grow: 1;
+        & .col {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            & h1, & h2, & p , & div {
+                margin: 15px;
+            }
+        }
+        &#searchBar{
+            flex-grow: 2;
+        }
+        &#output {
+            flex-grow: 12;
+            background: $blue;
+            & h2 {
+                font-weight: normal;
+                font-family: $bodyFont;
+            }
+        }
+    }
+    & input, & select {
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        border: none;
+        font-size: $h1font;
+        background: $gray;
+        color: $tan;
+        box-shadow: $boxShadow;
+        &:hover {
+            background: $gold;
+        }
+        &::placeholder {
+            color: $tan;
+        }
+    }
+    & button {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: $gray;
+        box-shadow: $boxShadow;
+        font-size: $h1font;
+    }
+}
