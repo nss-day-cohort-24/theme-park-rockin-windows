@@ -1,12 +1,15 @@
 "use strict";
 
-// Grab Area Data by key
+let areaOutput = require("./_output-category");
 
+// Grab Area Data by key
 let getAreaData = () => {
     // Area data in variable 
+    
+    return new Promise((resolve, reject) => {
+
     var areaData = `https://rockin-windows.firebaseio.com/attractions.json?orderBy="area_id"&equalTo=${event.target.id}`;
     console.log(areaData);
-    return new Promise((resolve, reject) => {
     
    // Create request
    let request = new XMLHttpRequest();
@@ -23,6 +26,7 @@ let getAreaData = () => {
     }).then(
         (resolve) => {
             // Call a function to show my parsed data
+                areaOutput.displayArea(resolve);
         },
         (reject) => {
             console.log("didn't load!");
