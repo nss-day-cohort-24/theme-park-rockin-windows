@@ -27,3 +27,14 @@ button {
     }
 }
 
+footer#copyright{
+    background: $gray;
+    color: $tan;
+    font-size: $bodyFont;
+    border-top: $border;
+    & p {
+        text-align: center;
+        margin-bottom: 0;
+
+    }
+}
