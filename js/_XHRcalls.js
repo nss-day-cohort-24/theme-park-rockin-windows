@@ -1,37 +1,27 @@
 "use strict";
 
-let areaOutput = require("./_output-category");
 
 // Grab Area Data by key
-let getAreaData = () => {
+let getAreaData = (event) => {
     // Area data in variable 
-    
+    console.log(event.target.id);
     return new Promise((resolve, reject) => {
 
-    var areaData = `https://rockin-windows.firebaseio.com/attractions.json?orderBy="area_id"&equalTo=${event.target.id}`;
-    console.log(areaData);
+        var areaData = `https://rockin-windows.firebaseio.com/attractions.json?orderBy="area_id"&equalTo=${event.target.id}`;
+        console.log(areaData);
     
    // Create request
-   let request = new XMLHttpRequest();
+        let request = new XMLHttpRequest();
 
-    request.onload = function() {
-        if (request.status === 200) {
-            let data = JSON.parse(request.responseText);
-            console.log(data);
-            resolve(data);       
-        } 
-    };
-    request.open("GET", areaData);
-    request.send();
-    }).then(
-        (resolve) => {
-            // Call a function to show my parsed data
-                areaOutput.displayArea(resolve);
-        },
-        (reject) => {
-            console.log("didn't load!");
-        }
-    );
+        request.onload = function() {
+             if (request.status === 200) {
+                 let data = JSON.parse(request.responseText);
+                    resolve(data);       
+                } 
+        };
+        request.open("GET", areaData);
+        request.send();
+    });
 };
  
 
