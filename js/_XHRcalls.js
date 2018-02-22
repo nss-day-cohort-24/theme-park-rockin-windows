@@ -1,59 +1,92 @@
 "use strict";
 
 // Grab Area Data by key
-let getAreaData = () => {
-    // Area data in variable
-    var areaData = 'https://rockin-windows.firebaseio.com/attractions.json?orderBy="area_id"&equalTo=1'; 
-   // Create request
-   let http = new XMLHttpRequest();
 
-    http.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log("loaded");
-            console.log(areaData);
+let getAreaData = () => {
+    // Area data in variable 
+    var areaData = `https://rockin-windows.firebaseio.com/attractions.json?orderBy="area_id"&equalTo=${event.target.id}`;
+    console.log(areaData);
+    return new Promise((resolve, reject) => {
+    
+   // Create request
+   let request = new XMLHttpRequest();
+
+    request.onload = function() {
+        if (request.status === 200) {
+            let data = JSON.parse(request.responseText);
+            console.log(data);
+            resolve(data);       
         } 
     };
-    http.open("GET", areaData, true);
-    http.send();
+    request.open("GET", areaData);
+    request.send();
+    }).then(
+        (resolve) => {
+            // Call a function to show my parsed data
+        },
+        (reject) => {
+            console.log("didn't load!");
+        }
+    );
 };
-getAreaData();
+ 
 
-// Get Attractions - pulls all (those with times and without)
+
 let getTimeData = () => {
+    return new Promise((resolve, reject) => {
     // Area data in variable
     var timeData = 'https://rockin-windows.firebaseio.com/attractions.json'; 
-   // Create request
-   let http = new XMLHttpRequest();
+    // Create request
+    let request = new XMLHttpRequest();
 
-    http.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log("loaded");
-            console.log(timeData);
+    request.onload = function() {
+        if (request.status === 200) {
+            let data = JSON.parse(request.responseText);
+            console.log(data);
+            resolve(data);       
         } 
     };
-    http.open("GET", timeData, true);
-    http.send();
+    request.open("GET", timeData);
+    request.send();
+    });
 };
-getTimeData();
+getTimeData()  
+    .then(
+        (resolve) => {
+            // Call a function to show my parsed data
+        },
+        (reject) => {
+            console.log("didn't load!");
+        }
+    );
 
-
-// Get POI (attractions) by key
 let getPOIData = () => {
+    return new Promise((resolve, reject) => {
     // Area data in variable
     var POIData = 'https://rockin-windows.firebaseio.com/attractions.json'; 
    // Create request
-   let http = new XMLHttpRequest();
+   let request = new XMLHttpRequest();
 
-    http.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log("loaded");
-            console.log(POIData);
+    request.onload = function() {
+        if (request.status === 200) {
+            let data = JSON.parse(request.responseText);
+            console.log(data);
+            resolve(data);       
         } 
     };
-    http.open("GET", POIData, true);
-    http.send();
+    request.open("GET", POIData);
+    request.send();
+    });
 };
-getPOIData();
+getPOIData()  
+    .then(
+        (resolve) => {
+            // Call a function to show my parsed data
+        },
+        (reject) => {
+            console.log("didn't load!");
+        }
+    );
 
-module.export = {getAreaData, getTimeData, getPOIData};
 
+module.exports = {getAreaData, getTimeData, getPOIData};
