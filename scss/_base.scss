@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient($tan, $gold);
+    background: $tan;
     font-family: $bodyFont;
     width: 1920px;
 }
@@ -27,6 +27,3 @@ button {
     }
 }
 
-img {
-    max-width: $maxWidth;
-}
