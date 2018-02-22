@@ -1,11 +1,13 @@
 // header
 
 #logo {
-    width: 300px;
+    width: 600px;
     margin-top: .5em;
     margin-bottom: 2em;
     margin-right: 1em;
 }
+
+// checkboxes
 
 .boxes {
     position: absolute;
@@ -16,6 +18,7 @@
 .box_label {
     color: $gold;
     font-family: $headingFont;
+    display: inline;
 }
 
 
@@ -44,7 +47,7 @@ main button {
 }
 
 .area {
-    font-size: 12px;
+    font-size: 30px;
     letter-spacing: .2em;
     white-space: nowrap;
 }
@@ -54,26 +57,32 @@ main button {
 #keyContainer {
     display: flex;
     flex-direction: column;
+    border: 5px solid $gray;
+    margin-bottom: 1em;
+    margin-right: 1em;
 }
 
 #keyContainer img {
-    height: 25px;
-    padding-right: .25em;
+    height: 30px;
+    padding-right: 1em;
 }
 
 #label_icon {
     color: $gold;
     font-family: $bodyFont;
+    font-size: 20px;
 }
 
 #key {
     color: $gold;
     font-size: 25px; 
+    text-align: center;
 }
 
 .keyInfo {
     display: flex;
     flex-direction: row;
-    padding-bottom: 1em;
+    margin-left: 1.5em;
+    margin-bottom: .25em;
 
 }
