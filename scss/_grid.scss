@@ -19,6 +19,8 @@ div#grid{
 #grid .card {
     flex-grow: 1; 
     background: none;
+    border:none;
+    border-radius: none; 
     &:hover {
         background: rgba(35,35,35,.5)
     }
