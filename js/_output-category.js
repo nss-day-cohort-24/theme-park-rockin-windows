@@ -1,6 +1,7 @@
 "use strict";
 
 var displayOutput = document.getElementById("display-output");
+////// display area 
 
 let displayArea = (displayInput)  => {
     displayOutput.innerHTML = "";
@@ -25,12 +26,6 @@ let displayArea = (displayInput)  => {
         let areaPOI = arrayOfAttractions[item];
         displayOutput.innerHTML += `<a href="#"><h2>${areaPOI.name}</h2></a>`;
     }   
-};
-
-// Get times into an array
-let displayTime = (displayInput) => {
-    displayOutput.innerHTML = "";
-    let arrayofTimes = Object.values(displayInput);
 };
 
 module.exports = {displayArea, displayOutput};
