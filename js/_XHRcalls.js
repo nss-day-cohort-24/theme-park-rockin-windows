@@ -24,8 +24,6 @@ let getAreaData = (event) => {
     });
 };
  
-
-
 let getTimeData = () => {
     return new Promise((resolve, reject) => {
     // Area data in variable
@@ -44,15 +42,7 @@ let getTimeData = () => {
     request.send();
     });
 };
-getTimeData()  
-    .then(
-        (resolve) => {
-            // Call a function to show my parsed data
-        },
-        (reject) => {
-            console.log("didn't load!");
-        }
-    );
+getTimeData();
 
 let getPOIData = () => {
     return new Promise((resolve, reject) => {

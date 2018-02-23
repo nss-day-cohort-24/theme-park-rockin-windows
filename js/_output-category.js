@@ -30,7 +30,11 @@ let displayArea = (displayInput)  => {
     } 
 };
 
-
+// Get times into an array
+let displayTime = (displayInput) => {
+    displayOutput.innerHTML = "";
+    let arrayofTimes = Object.values(displayInput);
+};
 
 
 module.exports = {displayArea, displayOutput};
