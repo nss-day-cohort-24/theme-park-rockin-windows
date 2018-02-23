@@ -14,8 +14,6 @@ let displayPOI = (inputPOI) => {
     let arrayInput = Object.values(inputPOI);
     console.log("array", arrayInput);
 
-    // var elememtIdName = "desc" + inputPOI.id;
-    // console.log("element", elememtIdName);
 
     var descOutput = document.getElementById(`desc${arrayInput[0].id}`);
     console.log("desc", arrayInput[0].description);

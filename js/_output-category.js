@@ -1,5 +1,6 @@
 "use strict";
 
+let XHRcalls = require("./_XHRcalls.js");
 var displayOutput = document.getElementById("display-output");
 
 let displayArea = (displayInput)  => {
@@ -21,13 +22,14 @@ let displayArea = (displayInput)  => {
         console.log("button 4");
         displayOutput.innerHTML += `<h1>Liberty Square</h1>`;
     }
-    console.log("outside if");
+
     for (let item in arrayOfAttractions) {
         let areaPOI = arrayOfAttractions[item];
+        console.log("areaPOI", areaPOI);
         displayOutput.innerHTML += `<a href="#"><h2 class="POI" id="POI${areaPOI.id}">${areaPOI.name}</h2></a><p class="clrDesc" id="desc${areaPOI.id}"></p>`;
-    }
-    
+    } 
 };
+
 
 
 
