@@ -1,5 +1,5 @@
 "use strict";
-
+let areaOutput = require("./_output-category");
 
 // Grab Area Data by key
 let getAreaData = (event) => {
@@ -62,15 +62,57 @@ let getPOIData = () => {
     request.send();
     });
 };
-getPOIData()  
-    .then(
-        (resolve) => {
-            // Call a function to show my parsed data
-        },
-        (reject) => {
-            console.log("didn't load!");
-        }
-    );
 
+let getPOIdesc = (new_ID) => {
+    // Area data in variable 
+    return new Promise((resolve, reject) => {
 
-module.exports = {getAreaData, getTimeData, getPOIData};
+        var POIdesc = `https://rockin-windows.firebaseio.com/attractions.json?orderBy="id"&equalTo=${new_ID}`;
+        console.log(POIdesc);
+    
+   // Create request
+        let request = new XMLHttpRequest();
+
+        request.onload = function() {
+             if (request.status === 200) {
+                 let data = JSON.parse(request.responseText);
+                    resolve(data);       
+                } 
+        };
+        request.open("GET", POIdesc);
+        request.send();
+    });
+};
+
+let getAttType = () => {
+    // Area data in variable 
+    return new Promise((resolve, reject) => {
+
+        var AttType = `https://rockin-windows.firebaseio.com/attraction_types.json`;
+        console.log(AttType);
+        
+    // Create request
+        let request = new XMLHttpRequest();
+
+        request.onload = function() {
+                if (request.status === 200) {
+                let AttData = JSON.parse(request.responseText);
+                    console.log("clicked ME!", AttData);
+                    resolve(AttData);
+                } 
+        };
+        request.open("GET", AttType);
+        request.send();
+    });
+};
+// getAttType().then(
+//     (resolve) => {
+//         // Call a function to show my parsed data
+//             areaOutput.atrType(resolve);
+//     },
+//     (reject) => {
+//         console.log("didn't load!");
+//     }
+// );
+
+module.exports = {getAreaData, getTimeData, getPOIData, getPOIdesc, getAttType};

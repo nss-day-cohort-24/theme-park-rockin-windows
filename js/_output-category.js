@@ -1,10 +1,13 @@
 "use strict";
 
+let XHRcalls = require("./_XHRcalls.js");
 var displayOutput = document.getElementById("display-output");
 
 let displayArea = (displayInput)  => {
     displayOutput.innerHTML = "";
     let arrayOfAttractions = Object.values(displayInput);
+    console.log(arrayOfAttractions);
+    console.log("FOCUS", arrayOfAttractions[0].id);
     console.log("displayInput", arrayOfAttractions[0]);
     if (arrayOfAttractions[0].area_id == 1) {
         console.log("button 1");
@@ -18,13 +21,13 @@ let displayArea = (displayInput)  => {
     } else if (arrayOfAttractions[0].area_id == 4) {
         console.log("button 4");
         displayOutput.innerHTML += `<h1>Liberty Square</h1>`;
-    } 
+    }
 
-    console.log("outside if");
     for (let item in arrayOfAttractions) {
         let areaPOI = arrayOfAttractions[item];
-        displayOutput.innerHTML += `<a href="#"><h2>${areaPOI.name}</h2></a>`;
-    }   
+        console.log("areaPOI", areaPOI);
+        displayOutput.innerHTML += `<a href="#"><h2 class="POI" id="POI${areaPOI.id}">${areaPOI.name}</h2></a><p class="clrDesc" id="desc${areaPOI.id}"></p>`;
+    } 
 };
 
 // Get times into an array
@@ -32,5 +35,6 @@ let displayTime = (displayInput) => {
     displayOutput.innerHTML = "";
     let arrayofTimes = Object.values(displayInput);
 };
+
 
 module.exports = {displayArea, displayOutput};
