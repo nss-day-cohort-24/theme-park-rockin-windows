@@ -1,4 +1,5 @@
 "use strict";
+let moment = require('../lib/node_modules/moment/');
 ///// Instructions
 // if they click 10 AM then insert 1 into let i
 
@@ -132,7 +133,27 @@ fillAttractionTimes(listOfAttractions.attractions);
 console.log('full attractionTimes array:', attractionTimes);
 // // final result shouhld be 
 // let attractionTimes = ["8:00AM", "10:00AM", "11:40AM", "9:00AM", "11:00AM"];
-console.log('full attractionTimes array:', attractionTimes);
+
+//parse our attractionTimes array into military time
+console.log(moment().minute());
+
+let attractionTimesMilitary = [];
+
+for (let i = 0; i<attractionTimes.length; i++){
+    let validTime = moment(attractionTimes[i]).isValid();
+
+    console.log('is valid? ', validTime);
+
+    let newTime = moment(attractionTimes[i], "hh:mmaa").format("HH:mm");
+
+    console.log("military time to add", newTime);
+
+    attractionTimesMilitary.push(newTime);
+}
+
+console.log('parsed attractionTimesMilitary array: ', attractionTimesMilitary);
+
+
 
 // let attractionsByTime = {};
 // // create function that take the attractionTimes item values and make them into the attractionsByTime keys
