@@ -97,28 +97,39 @@ let attractionTimes = [];
 console.log('empty attractionTimes array:', attractionTimes);
 
 //taking the id from the attractionsWithTimes items and comparing to the id of the attractions array
-console.log('attractionsWithTime item 0:', attractionsWithTimes[0]);
-console.log('list of attractions, attractions[0].id:', listOfAttractions.attractions[0].id);
+// console.log('attractionsWithTime item 0:', attractionsWithTimes[0]);
+// console.log('list of attractions, attractions[0].id:', listOfAttractions.attractions[0].id);
 
 let fillAttractionTimes = (A) => { 
     
     for(let i = 0; i < attractionsWithTimes.length; i++) {
-        console.log('outside IF: index number is ' + i + '. What is the id of that index? ' + attractionsWithTimes[i]);
+        // console.log('outside IF: index number is ' + i + '. What is the id of that index? ' + attractionsWithTimes[i]);
         
         for (let j = 0; j < A.length; j++) {
 
-            console.log('which object are we:', A[j].id);
+            // console.log('which object are we:', A[j].id);
 
             if (attractionsWithTimes[i] === A[j].id) {
-                console.log('attractionsWithTimes: ' + attractionsWithTimes[i] + '. Array Id: ' + A[j].id);
+                // console.log('attractionsWithTimes: ' + attractionsWithTimes[i] + '. Array Id: ' + A[j].id);
                 let timesArray = A[j].times; //store the items times in a local array
                 console.log('the id is ' + A[j].id + ' What times do I have? ', timesArray);
                 // check the times property for any times that are not already stored in the attractionTimes array - if they are not, store them
+                
+                for(let k = 0; k < timesArray.length; k++) {
+
+                    if ( attractionTimes.includes(timesArray[k]) === false) {
+                        console.log("time to add:", timesArray[k]);
+                        attractionTimes.push(timesArray[k]);
+                    }
+                }
+
             }
         }
     }
 };
 fillAttractionTimes(listOfAttractions.attractions);
+
+console.log('full attractionTimes array:', attractionTimes);
 // // final result shouhld be 
 // let attractionTimes = ["8:00AM", "10:00AM", "11:40AM", "9:00AM", "11:00AM"];
 console.log('full attractionTimes array:', attractionTimes);
