@@ -60,19 +60,23 @@ let listOfAttractions = {
 };
 
 let attractionItem0 = listOfAttractions.attractions[3]; // output the object with the id of 4/name Emporium
-console.log('attraction item 3:', attractionItem0);
+// console.log('attraction item 3:', attractionItem0);
 
 let attractionIDValue = listOfAttractions.attractions[3].id; // outputs 4;
+// console.log('attraction 4 id number:', attractionIDValue);
+
 let attractionTimeValues = listOfAttractions.attractions[3].times; // outputs ["9:00AM", "11:00AM"];
+// console.log('attraction 4 Time Values:', attractionTimeValues);
+
 let attractionsWithTimes = []; 
-console.log('attractionsWithTimes:', attractionsWithTimes);
+// console.log('attractionsWithTimes:', attractionsWithTimes);
 // we have an object - we can loop through the attraction array to check each item(object) for a key called times
 let checkForTimes = (A) => { //declare a fat arrow function with parameter A to pass in arrays
     for (let i = 0; i < A.length; i++) {
-        console.log(A[i]); //outputs to console the current item-object
+        // console.log(A[i]); //outputs to console the current item-object
         // if the attractionItem has the key "times" then return the value of the id of that object item into the empty array attractionsWithTimes
         for (let prop in A[i]) {
-            console.log('current prop:', prop);
+            // console.log('current prop:', prop);
             if (prop === "times"){
                 attractionsWithTimes.push(A[i].id);
             }
@@ -83,18 +87,42 @@ let checkForTimes = (A) => { //declare a fat arrow function with parameter A to 
 checkForTimes(listOfAttractions.attractions);
 console.log('full attractionsWithTimes:', attractionsWithTimes);
 
-
-
-
-// // final result should be 
+// final result should be 
 // let attractionsWithTimes = [1, 2, 4];
 
-// //search attractionsArray for items with id properties stored in the attractionsWithTimes array
-// //for each matching item, check the times property for any times that are not already stored in the attractionTimes array - if they are not, store them
+//search attractionsArray for items with id properties stored in the attractionsWithTimes array
+//for each matching item, check the times property for any times that are not already stored in the attractionTimes array - if they are not, store them
 
-// let attractionTimes = [];
+let attractionTimes = [];
+console.log('empty attractionTimes array:', attractionTimes);
+
+//taking the id from the attractionsWithTimes items and comparing to the id of the attractions array
+console.log('attractionsWithTime item 0:', attractionsWithTimes[0]);
+console.log('list of attractions, attractions[0].id:', listOfAttractions.attractions[0].id);
+
+let fillAttractionTimes = (A) => { 
+    
+    for(let i = 0; i < attractionsWithTimes.length; i++) {
+        console.log('outside IF: index number is ' + i + '. What is the id of that index? ' + attractionsWithTimes[i]);
+        
+        for (let j = 0; j < A.length; j++) {
+
+            console.log('which object are we:', A[j].id);
+
+            if (attractionsWithTimes[i] === A[j].id) {
+                console.log('attractionsWithTimes: ' + attractionsWithTimes[i] + '. Array Id: ' + A[j].id);
+                let timesArray = A[j].times; //store the items times in a local array
+                console.log('the id is ' + A[j].id + ' What times do I have? ', timesArray);
+                // check the times property for any times that are not already stored in the attractionTimes array - if they are not, store them
+            }
+        }
+    }
+};
+fillAttractionTimes(listOfAttractions.attractions);
 // // final result shouhld be 
 // let attractionTimes = ["8:00AM", "10:00AM", "11:40AM", "9:00AM", "11:00AM"];
+console.log('full attractionTimes array:', attractionTimes);
+
 // let attractionsByTime = {};
 // // create function that take the attractionTimes item values and make them into the attractionsByTime keys
 
