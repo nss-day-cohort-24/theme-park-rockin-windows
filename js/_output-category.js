@@ -2,6 +2,7 @@
 
 let XHRcalls = require("./_XHRcalls.js");
 var displayOutput = document.getElementById("display-output");
+////// display area 
 
 let displayArea = (displayInput)  => {
     displayOutput.innerHTML = "";

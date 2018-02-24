@@ -9,9 +9,6 @@ let button2 = document.getElementById("2").addEventListener("click", area);
 let button3 = document.getElementById("3").addEventListener("click", area);
 let button4 = document.getElementById("4").addEventListener("click", area);
 
-// Time values
-let dropdown = document.getElementById("timeOptions").addEventListener("change", times);
-
 function area(event) {
     XHRcalls.getAreaData(event).then(
         (resolve) => {
