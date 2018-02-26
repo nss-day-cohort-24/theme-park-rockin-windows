@@ -54,7 +54,6 @@ let getPOIData = () => {
     request.onload = function() {
         if (request.status === 200) {
             let data = JSON.parse(request.responseText);
-            console.log(data);
             resolve(data);       
         } 
     };
@@ -84,35 +83,27 @@ let getPOIdesc = (new_ID) => {
     });
 };
 
-let getAttType = () => {
-    // Area data in variable 
-    return new Promise((resolve, reject) => {
+// let AttData;
+// let getAttType = () => {
+//     // Area data in variable 
+//     // return new Promise((resolve, reject) => {
 
-        var AttType = `https://rockin-windows.firebaseio.com/attraction_types.json`;
-        console.log(AttType);
+//         var AttType = `https://rockin-windows.firebaseio.com/attraction_types.json`;
+//         console.log(AttType);
         
-    // Create request
-        let request = new XMLHttpRequest();
+//     // Create request
+//         let request = new XMLHttpRequest();
 
-        request.onload = function() {
-                if (request.status === 200) {
-                let AttData = JSON.parse(request.responseText);
-                    console.log("clicked ME!", AttData);
-                    resolve(AttData);
-                } 
-        };
-        request.open("GET", AttType);
-        request.send();
-    });
-};
-// getAttType().then(
-//     (resolve) => {
-//         // Call a function to show my parsed data
-//             areaOutput.atrType(resolve);
-//     },
-//     (reject) => {
-//         console.log("didn't load!");
-//     }
-// );
+//         request.onload = function() {
+//                 if (request.status === 200) {
+//                 AttData = JSON.parse(request.responseText);
+//                     console.log("LoadedAtt", AttData);
+//                     // resolve(AttData);
+//                 } 
+//         };
+//         request.open("GET", AttType);
+//         request.send();
+//     // });
+// };
 
-module.exports = {getAreaData, getTimeData, getPOIData, getPOIdesc, getAttType};
+module.exports = {getAreaData, getTimeData, getPOIData, getPOIdesc};
