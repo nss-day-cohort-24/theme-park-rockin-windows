@@ -36,7 +36,7 @@ let getTimeData = () => {
             let data = JSON.parse(request.responseText);
             console.log(data);
             resolve(data);       
-        } 
+        }
     };
     request.open("GET", timeData);
     request.send();
