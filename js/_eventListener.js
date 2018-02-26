@@ -2,12 +2,23 @@
 let XHRcalls = require("./_XHRcalls.js");
 let areaOutput = require("./_output-category");
 let POIOutput = require("./_output-POI");
+let searchEvent = require("./_search.js");
 
 // Area buttons
 let button1 = document.getElementById("1").addEventListener("click", area);
 let button2 = document.getElementById("2").addEventListener("click", area);
 let button3 = document.getElementById("3").addEventListener("click", area);
 let button4 = document.getElementById("4").addEventListener("click", area);
+
+// Search event - executes on click of enter key
+let searchInput = document.getElementById("search");
+searchInput.addEventListener("keypress", function(event) {
+    if (event.keyCode === 13) {
+        console.log("entered!");
+        console.log(searchInput.value);
+        searchEvent(searchInput.value);
+    }
+});
 
 function area(event) {
     XHRcalls.getAreaData(event).then(

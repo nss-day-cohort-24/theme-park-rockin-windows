@@ -54,7 +54,6 @@ let getPOIData = () => {
     request.onload = function() {
         if (request.status === 200) {
             let data = JSON.parse(request.responseText);
-            console.log(data);
             resolve(data);       
         } 
     };
