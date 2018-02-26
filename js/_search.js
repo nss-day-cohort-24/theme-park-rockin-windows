@@ -83,7 +83,7 @@ let styleClassesRed = (classArray) => {
 
 let styleClassesGreen = (classArray) => {
     for (var j = 0; j < classArray.length; j++) {
-        classArray[j].style.backgroundColor = "rgba(1, 87, 52, .7)";   
+        classArray[j].style.backgroundColor = "rgba(167, 130, 50, .7)";   
     }
 };
 // clears card class of styles
