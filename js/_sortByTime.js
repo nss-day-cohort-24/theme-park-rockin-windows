@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 // ///// Instructions
 // // if they click 10 AM then insert 1 into let i
 
@@ -18,9 +18,6 @@
 // }
 // let userSelection = timeDropdown.addEventListener("change", getTime);
 // console.log('user selection', userSelection);
-
-
-
 
 // // full list of attraction
 // let listofAttractions = {
@@ -66,12 +63,13 @@
 
 // // we have an object - we can loop through the attraction array to check each item(object) for a key called times
 
+
 // // if the attractionItem has the key "times" then return the value of the id of that object item into the empty array attractionsWithTimes
 
 // let attractionsWithTimes = []; 
 
 // // final result should be 
-// let attractionsWithTimes = [1, 2, 4];
+// //let attractionsWithTimes = [1, 2, 4];
 
 // //search attractionsArray for items with id properties stored in the attractionsWithTimes array
 // //for each matching item, check the times property for any times that are not already stored in the attractionTimes array - if they are not, store them
@@ -112,3 +110,4 @@
 // // //comparing userSelection to the attractionTimes
 
 // module.exports = {};
+
