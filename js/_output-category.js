@@ -25,11 +25,17 @@ let displayArea = (displayInput)  => {
     }
 
     for (let item in arrayOfAttractions) {
-
-        // XHRcalls.getAttType();
-        console.log("The Call", AttData);
         let areaPOI = arrayOfAttractions[item];
-        displayOutput.innerHTML += `<a href="#"><h2 class="POI" id="POI${areaPOI.id}">${areaPOI.name}</h2></a><p class="clrDesc" id="desc${areaPOI.id}"></p>`;
+        let AttTypeName;
+
+        for (let item in AttData){
+            let AttType = AttData[item];
+            if (areaPOI.type_id == AttType.id){
+                AttTypeName = AttType.name;
+            }
+        }
+
+        displayOutput.innerHTML += `<a href="#"><h2 class="POI" id="POI${areaPOI.id}">${areaPOI.name} (${AttTypeName})</h2></a><p class="clrDesc" id="desc${areaPOI.id}"></p>`;
     } 
 };
 
@@ -42,6 +48,8 @@ let displayTime = (displayInput) => {
 
 module.exports = {displayArea, displayOutput};
 
+
+//Call for Attraction Types
 let AttData;
 let getAttType = () => {
     // Area data in variable 
