@@ -22,7 +22,7 @@ let searchEvent = (inputValue) => {
                     let dataID = data[i].id; // target POI
                     ids.push(dataID);
                     searchNames.push(data[i].name);  
-                    console.log(searchNames);               
+                    console.log(data[i].area_id);               
                 }      
         }
        displaySearchResults(searchNames);
@@ -34,6 +34,7 @@ let displaySearchResults = (searchNames) => {
     displayOutput.innerHTML = '';
     for (var i = 0; i < searchNames.length; i++) {
         displayOutput.innerHTML += `<a href="#"><h2>${searchNames[i]}</h2></a>`;
+
     } 
 };
 
