@@ -22,24 +22,29 @@ let userSelection = timeDropdown.addEventListener("change", getTime);
 console.log('user selection', userSelection);
 
 // full list of attraction
-let callData = XHRcalls.getTimeData().then(
+let callData = () => {
+    XHRcalls.getTimeData().then(
     (resolve) => {
         console.log('resolved:', resolve);
         sortByTime(resolve);
-    }
-);
+        console.log('inside callData:', sortByTime(resolve));
+        }
+    );
+};
+
+callData();
 
 let sortByTime = (listOfAttractions) => {
-    console.log('list of attractions', listOfAttractions[3]);
+    // console.log('list of attractions', listOfAttractions[3]);
 
-    let attractionItem0 = listOfAttractions[3]; // output the object with the id of 4/ne Emporium
-    console.log('attraction item 3:', attractionItem0);
+    // let attractionItem0 = listOfAttractions[3]; // output the object with the id of 4/ne Emporium
+    // console.log('attraction item 3:', attractionItem0);
 
-    let attractionIDValue = listOfAttractions[3].id; // outputs 4;
-    console.log('attraction 4 id number:', attractionIDValue);
+    // let attractionIDValue = listOfAttractions[3].id; // outputs 4;
+    // console.log('attraction 4 id number:', attractionIDValue);
 
-    let attractionTimeValues = listOfAttractions[3].times; // outputs ["9:00", "11:00"];
-    console.log('attraction 4 Time Values:', attractionTimeValues);
+    // let attractionTimeValues = listOfAttractions[3].times; // outputs ["9:00", "11:00"];
+    // console.log('attraction 4 Time Values:', attractionTimeValues);
 
     let attractionsWithTimes = []; 
     // console.log('attractionsWithTimes:', attractionsWithTimes);
@@ -179,27 +184,27 @@ let sortByTime = (listOfAttractions) => {
 
     convertItemsToKeys(ABTkeys);
 
-    console.log('value of item 0 in sABT obj:', sortedAttractionsByTime[10]); // returns an empty array; to push to array => array.push('content') => sortedAttractionsByTime[10].push('attraction id')
+    // console.log('value of item 0 in sABT obj:', sortedAttractionsByTime[10]); // returns an empty array; to push to array => array.push('content') => sortedAttractionsByTime[10].push('attraction id')
 
-    console.log('sort:', sortedAttractionsByTime); 
+    // console.log('sort:', sortedAttractionsByTime); 
     //find all ids whose times property contains that hour
 
     for (let i = 0; i < attractionsWithTimes.length ; i++) {
         let itemID = attractionsWithTimes[i]; //returns the id of the attraction
-        console.log('item ID is:', itemID);
+        // console.log('item ID is:', itemID);
         
         for(let j = 0; j < listOfAttractions.length; j++) { //loops through the list of attractions 
             let currentAttractionsItem = listOfAttractions[j]; // sets the current attractions as a value of this variable
             // console.log('current Attractions item: ', currentAttractionsItem);
             if (itemID === currentAttractionsItem.id) { //if the itemID and id of the current attractions match
-                console.log('they match');
+                // console.log('they match');
                 let timesOfItem = currentAttractionsItem.times; //then return the times of that current attraction
                 // console.log('Array of times for this item are: '+ timesOfItem);
                 
                 //convert times to military in preparation to compare
                 let militaryTimesOfItem = [];
                 convertTimeToMilitary(timesOfItem, militaryTimesOfItem); //convert the current attraction times to military times
-                console.log('militaryTimesOfItem:', militaryTimesOfItem);
+                // console.log('militaryTimesOfItem:', militaryTimesOfItem);
 
                 for (let k = 0; k < militaryTimesOfItem.length; k++ ) { //loop through the converted times
                 let compareItem = militaryTimesOfItem[k]; //k
@@ -214,26 +219,37 @@ let sortByTime = (listOfAttractions) => {
                         // console.log("key " + compareKey + " to return itemID to:" + sortedAttractionsByTime[compareKey]);
                         // console.log("id to push to key: ", itemID);
                         sortedAttractionsByTime[compareKey].push(itemID); //then push the id of the attraction to that key
-                        console.log(sortedAttractionsByTime);
-                        } else {
-                        console.log('comparison failed');
+                        // console.log(sortedAttractionsByTime);
                     }
+                    //      else {
+                    //     console.log('comparison failed');
+                        
+                    //     //final result: 
+                    //     //  let sortedAttractionsByTime = {
+                    //     //      "08:00" : [1],
+                    //     //      "09:00" : [4],
+                    //     //      "10:00" : [1, 2],
+                    //     //      "11:00" : [4],
+                    //     //      "11:40" : [2]
+                    //     //  }; 
+
+                    //     // // //comparing userSelection to the attractionTimes
+                    // }
                 }    
             }
         }
     }
-    }
+    
+    
+}
 
-    //  //final result: 
-    //  let sortedAttractionsByTime = {
-    //      "08:00" : [1],
-    //      "09:00" : [4],
-    //      "10:00" : [1, 2],
-    //      "11:00" : [4],
-    //      "11:40" : [2]
-    //  }; 
+console.log('outside sortByTime functions', sortedAttractionsByTime);
 
-    // // //comparing userSelection to the attractionTimes
+
+
+return sortedAttractionsByTime;
+
 };
 
-module.exports = {};
+
+module.exports = { callData };

@@ -1,9 +1,14 @@
 "use strict";
 
-let XHRcalls = require("./_XHRcalls.js");
-var displayOutput = document.getElementById("display-output");
-////// display area 
+console.log('begin _output-category.js');
 
+let XHRcalls = require("./_XHRcalls.js");
+// let sortTime =require("./_sortByTime.js");
+var displayOutput = document.getElementById("display-output");
+
+
+////// display area 
+console.log('display area begins');
 let displayArea = (displayInput)  => {
     displayOutput.innerHTML = "";
     let arrayOfAttractions = Object.values(displayInput);
@@ -40,6 +45,7 @@ let displayArea = (displayInput)  => {
 };
 
 // Get times into an array
+console.log('display times into an array');
 let displayTime = (displayInput) => {
     displayOutput.innerHTML = "";
     let arrayofTimes = Object.values(displayInput);
@@ -72,4 +78,12 @@ let getAttType = () => {
         request.send();
     // });
 };
+
 getAttType();
+console.log('getAttType');
+
+
+/////// display by time
+console.log('sort by time begins');
+// console.log('inside output-cat:', sortTime.callData());
+console.log('begin _output-category.js');
