@@ -95,7 +95,7 @@ let clearCards = () => {
 };
 // clears search input field
 let clearSearchInput = () => {
-    input.reset();
+    input.value = '';
 };
 
 // clear button event listeners
@@ -103,6 +103,6 @@ let clearButton = document.getElementById("clearSearch");
 let input = document.getElementById("search");
 
 clearButton.addEventListener("click", clearCards);
-input.addEventListener("click", clearSearchInput);
+clearButton.addEventListener("click", clearSearchInput);
 
 module.exports = searchEvent;
