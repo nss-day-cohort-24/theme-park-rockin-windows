@@ -26,8 +26,16 @@ let displayArea = (displayInput)  => {
 
     for (let item in arrayOfAttractions) {
         let areaPOI = arrayOfAttractions[item];
-        console.log("areaPOI", areaPOI);
-        displayOutput.innerHTML += `<a href="#"><h2 class="POI" id="POI${areaPOI.id}">${areaPOI.name}</h2></a><p class="clrDesc" id="desc${areaPOI.id}"></p>`;
+        let AttTypeName;
+
+        for (let item in AttData){
+            let AttType = AttData[item];
+            if (areaPOI.type_id == AttType.id){
+                AttTypeName = AttType.name;
+            }
+        }
+
+        displayOutput.innerHTML += `<a href="#"><h2 class="POI" id="POI${areaPOI.id}">${areaPOI.name} (${AttTypeName})</h2></a><p class="clrDesc" id="desc${areaPOI.id}"></p>`;
     } 
 };
 
@@ -39,3 +47,29 @@ let displayTime = (displayInput) => {
 
 
 module.exports = {displayArea, displayOutput};
+
+
+//Call for Attraction Types
+let AttData;
+let getAttType = () => {
+    // Area data in variable 
+    // return new Promise((resolve, reject) => {
+
+        var AttType = `https://rockin-windows.firebaseio.com/attraction_types.json`;
+        console.log(AttType);
+        
+    // Create request
+        let request = new XMLHttpRequest();
+
+        request.onload = function() {
+                if (request.status === 200) {
+                AttData = JSON.parse(request.responseText);
+                    console.log("LoadedAtt", AttData);
+                    // resolve(AttData);
+                } 
+        };
+        request.open("GET", AttType);
+        request.send();
+    // });
+};
+getAttType();

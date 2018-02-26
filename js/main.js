@@ -12,3 +12,5 @@ let copyrightDate = require("./_copyrightDate.js");
 
 //Outputs current date and time to copyright area
 copyrightDate.output();
+
+console.log(XHRcalls.AttData);
