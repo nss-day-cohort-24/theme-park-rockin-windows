@@ -2,8 +2,8 @@
 
 console.log('begin _output-category.js');
 
+let sortTime =require("./_sortByTime.js");
 let XHRcalls = require("./_XHRcalls.js");
-// let sortTime =require("./_sortByTime.js");
 var displayOutput = document.getElementById("display-output");
 
 
@@ -84,6 +84,17 @@ console.log('getAttType');
 
 
 /////// display by time
-console.log('sort by time begins');
-// console.log('inside output-cat:', sortTime.callData());
+console.log('sortByTime');
+// let callData = () => {
+    XHRcalls.getTimeData().then(
+    (resolve) => {
+        console.log('resolved:', resolve);
+        // sortTime.sortByTime(resolve);
+        // console.log('inside callData:', sortTime.sortByTime(resolve));
+        }
+    );
+// };
+console.log('end sortByTime');
+
+// callData();
 console.log('begin _output-category.js');

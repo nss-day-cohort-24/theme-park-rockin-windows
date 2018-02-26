@@ -22,17 +22,7 @@ let userSelection = timeDropdown.addEventListener("change", getTime);
 console.log('user selection', userSelection);
 
 // full list of attraction
-let callData = () => {
-    XHRcalls.getTimeData().then(
-    (resolve) => {
-        console.log('resolved:', resolve);
-        sortByTime(resolve);
-        console.log('inside callData:', sortByTime(resolve));
-        }
-    );
-};
 
-callData();
 
 let sortByTime = (listOfAttractions) => {
     // console.log('list of attractions', listOfAttractions[3]);
@@ -252,4 +242,4 @@ return sortedAttractionsByTime;
 };
 
 
-module.exports = { callData };
+module.exports = { sortByTime };
